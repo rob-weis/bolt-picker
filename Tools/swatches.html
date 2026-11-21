@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Bolt Picker accuracy swatches</title>
+<style>
+  body { font: 14px -apple-system, system-ui, sans-serif; margin: 32px; background: #fff; color: #222; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+  .s { height: 110px; border-radius: 10px; border: 1px solid #0002; }
+  code { display: block; margin-top: 6px; font-size: 13px; }
+</style>
+<h1>Pick each swatch. The copied hex should match its label.</h1>
+<p>On a wide-color display, ±1 per channel can happen from color conversion rounding.</p>
+<div class="grid" id="g"></div>
+<script>
+  const colors = ["#eb5244", "#00ff00", "#ff0000", "#0000ff", "#123456", "#ffffff",
+                  "#000000", "#808080", "#f0e68c", "#6a5acd", "#2e8b57", "#ff69b4"];
+  const g = document.getElementById("g");
+  for (const c of colors) {
+    g.insertAdjacentHTML("beforeend", `<div><div class="s" style="background:${c}"></div><code>${c}</code></div>`);
+  }
+</script>

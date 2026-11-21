@@ -1,0 +1,18 @@
+// Code signing for Bolt Picker.
+//
+// Right now the app is signed ad-hoc ("Sign to Run Locally"), because the
+// Bolts & Stars developer account isn't added to Xcode on this Mac yet.
+// Ad-hoc builds run fine, but macOS ties the Screen Recording permission to the
+// exact build, so you may need to re-grant it after each rebuild.
+//
+// To sign with your developer account (keeps the permission across rebuilds):
+//   1. Xcode ▸ Settings ▸ Accounts ▸ "+" ▸ add your developer account
+//   2. Replace the three lines below with:
+//        CODE_SIGN_STYLE = Automatic
+//        CODE_SIGN_IDENTITY = Apple Development
+//        DEVELOPMENT_TEAM = <your 10-character Team ID>
+//   3. Run `make generate` (or `xcodegen generate`).
+
+CODE_SIGN_STYLE = Manual
+CODE_SIGN_IDENTITY = -
+DEVELOPMENT_TEAM =
